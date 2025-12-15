@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Expense Splitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>💵 Minimalist Expense Splitter</h1>
+
+        <section id="add-expense">
+            <h2>➕ Add New Expense</h2>
+            <form id="expense-form">
+                <div>
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" required>
+                </div>
+                <div>
+                    <label for="amount">Amount (PKR):</label>
+                    <input type="number" id="amount" min="0.01" step="0.01" required>
+                </div>
+                <div class="full-width">
+                    <label for="paid-by">Paid By:</label>
+                    <select id="paid-by" required>
+                    </select>
+                </div>
+                <div class="full-width">
+                    <label>Shared By (Check all that apply):</label>
+                    <div class="checkbox-group" id="shared-by-checkboxes">
+                    </div>
+                </div>
+                <div class="full-width">
+                    <button type="submit">Add Expense</button>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="balances-summary">
+            <h2>⚖️ Current Balances</h2>
+            <div class="table-wrapper">
+                <table class="balances-table">
+                    <thead>
+                        <tr><th>Person</th><th>Net Balance</th></tr>
+                    </thead>
+                    <tbody id="balances-body">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="settlement-advice">
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="expense-summary">
+            <h2>📝 Expense History</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Paid By</th>
+                            <th>Shared By</th>
+                            <th>Settled</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expense-table-body">
+                        <tr><td colspan="6" style="text-align: center;">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
